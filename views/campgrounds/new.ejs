@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <div class='container'>
+        <title>Campground</title>
+    </div>
+
+  </head>
+  <body> -->
+  <% layout('/layouts/boilerplate') %>
+  <div class="row">
+    <h1 class='text-center mb-3 col-6 offset-3'>New Campground</h1>
+    <div class="col-6 offset-3">
+      <form action ="/campgrounds" method="POST" novalidate class='validated-form' enctype='multipart/form-data'>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="Enter Title" name="campground[title]" required>
+          <small id="titleHelp" class="form-text text-muted">Please enter campground title</small>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control" id="location" aria-describedby="location" placeholder="Enter Location" name="campground[location]" required>
+          <small id="locationHelp" class="form-text text-muted">Please enter campground location</small>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <input class='mb-3' type="file" name="image" id="" multiple>
+
+
+        <!-- <div class="form-group">
+          <label for="image">Image URL</label>
+          <input type="text" class="form-control" id="image" aria-describedby="image" placeholder="Upload Image Here" name="campground[image]" required>
+          <small id="imageHelp" class="form-text text-muted">Please upload image here</small>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div> -->
+
+        <div class="mb-3">
+          <label class='form-label' for="price">Campground Price</label>
+          <div class="input-group">
+            <span class='input-group-text' id='pricelabel'>$</span>
+            <input type="text" class='form-control' id='price' placeholder='0.0' aria-label='price' aria-describedby='pricelabel' name='campground[price]' required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea type="text" class="form-control" id="description" aria-describedby="description" placeholder="Put description here" name="campground[description]" required></textarea>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary my-3">Add Campground</button>
+      </form>
+    </div>
+  </div>
+
+  </body>
+</html>
